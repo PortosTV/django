@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les trains</title>
+    <link rel="stylesheet" href="{% static 'trainlib/css/styles.css' %}">
+</head>
+<header>
+    <nav>
+        <a id="logo" href="{% static 'trainlib/img/logo.png' %}">SNCF</a>
+    </nav>
+</header>
+<body>
+
+    <h1 class="Titre">BIENVENUE SUR TRAINLIB</h1>
+    <p>{{ message }}</p>
+    <p>Nous sommes le {{ publication|date:"d/m/y"}}</p>
+    <ul>
+        {% for train in trains %}
+        <li>{{train.trajet}}</li>
+        {% end for %}
+    </ul>
+</body>
+</html>
